@@ -8,7 +8,7 @@ get '/translate' do
 end
 
 post '/translate' do
-  # @translate = PigLatin(param[:text])
-  gem 'pig_latin'
+  @input = params[:name]
+  @input = PigLatin.moderator(@input)
   erb :result
 end
